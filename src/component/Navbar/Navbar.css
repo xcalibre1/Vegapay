@@ -1,0 +1,27 @@
+.navbar {
+    width: 98%;
+    display: flex;
+    padding: 20px;
+    justify-content: end;
+    background-color: white;
+    align-items: center;
+    height: 30px;
+}
+.userTime {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    justify-content: end;
+    align-items: start;
+}
+.userTime :nth-child(2){
+    font-size: 0.7rem;
+    color: gray
+}
+.userInfo {
+    display: flex;
+    justify-content: space-between;
+}
+.selectTag :nth-child(4) {
+    border: none;
+}

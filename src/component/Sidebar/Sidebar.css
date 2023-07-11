@@ -1,0 +1,11 @@
+.titleText {
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+    position: relative;
+    padding: 12px;
+    text-align: left;
+    left: 15px;
+}

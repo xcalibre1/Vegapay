@@ -1,0 +1,13 @@
+.searchWrapper {
+    margin: 20px;
+    border: 4px;
+}
+
+.searchWrapper >.searchContainer {
+    padding: 40px;
+    display: flex;
+    border-radius: 8px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}

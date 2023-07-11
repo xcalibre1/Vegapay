@@ -1,0 +1,9 @@
+.mainLayoutWrapper {
+    display: flex;
+    background-color: #d3d9e0;
+}
+.content {
+    display: flex;
+    width: 85%;
+    flex-direction: column;
+}
