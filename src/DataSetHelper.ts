@@ -77,13 +77,20 @@ export const tableDataSet = (tableType = "Kit", tableData: any, searchResult: an
 export const setFormValues = (tableType: string, rowData: any): any => {
     switch(tableType){
         case "Kit": {
-            console.log("rowData", rowData)
             const {row} = rowData
+            if(row.actions === 'View') {
+                return {
+                    customerName: row.customerName,
+                    cardNo: row.cardNo,
+                    emailId: row.emailId,
+                    mobileNo: row.mobileNo
+                }
+            }
             
             return {
                 programeType: "",
-                programeName: row.customerName,
-                corporateName: row.customerName
+                programeName: "",
+                corporateName: ""
             }
             
         }

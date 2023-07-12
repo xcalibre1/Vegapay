@@ -59,7 +59,11 @@ export type FORM = {
 export interface formJsonType {
     formTitle: string;
     forms: FORM[]
-} 
+}
+
+export interface formJsonKeyType {
+    [key: string]: formJsonType
+}
 
 export interface tableDataType {
     cols: any;

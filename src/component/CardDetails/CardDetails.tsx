@@ -4,24 +4,34 @@ import { useEffect, useState } from "react";
 import Modal from '@mui/material/Modal';
 import FormSection from "../FormSection/FormSection";
 import { setFormValues } from "../../DataSetHelper";
-import { formJsonType, tableDataType } from "../../global.type";
+import { formJsonKeyType, formJsonType, tableDataType } from "../../global.type";
+import { createAccountformJson } from "../../contants";
 
 interface CardDetailType {
     tableData: tableDataType;
     cardType: string;
-    formJson: formJsonType;
+    formJson: formJsonKeyType;
 }
 
 function CardDetails(props: CardDetailType) {
     const { tableData, cardType, formJson } = props;
-    const [selectedActionData, setSelectedActionData] = useState();
+    const [selectedActionData, setSelectedActionData] = useState<any>();
     const [isModalVisible, setModalVisible] = useState<boolean>(false);
     const [formData, setFormData] = useState<{ [key: string]: string | number }>({});
+    const [formkeyJson, setFormKeyJson] = useState<formJsonType>(createAccountformJson.View);
+
     useEffect(() => {
         if (cardType && selectedActionData) {
-            setFormData(setFormValues(cardType, selectedActionData))
+            setFormData(setFormValues(cardType, selectedActionData));
         }
     }, [selectedActionData, cardType])
+
+    useEffect(() => {
+        if(selectedActionData && formJson) {
+            const newFormJson = JSON.parse(JSON.stringify(formJson));
+            setFormKeyJson(newFormJson[selectedActionData.row.actions])
+        }
+    }, [selectedActionData, formJson])
 
     return (
         <div className="tableWrapper">
@@ -36,7 +46,7 @@ function CardDetails(props: CardDetailType) {
                     aria-labelledby="parent-modal-title"
                     aria-describedby="parent-modal-description"
                 >
-                    <FormSection formTitle={formJson.formTitle} formData={formData} formJson={formJson.forms} cancelBtnHandler={() => setModalVisible(false)} />
+                    <FormSection formTitle={formkeyJson.formTitle} formData={formData} formJson={formkeyJson.forms} cancelBtnHandler={() => setModalVisible(false)} />
                 </Modal>
             </Container>
         </div>

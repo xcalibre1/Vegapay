@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { tableDataSet } from "../../DataSetHelper";
 import axios from "axios";
 import { SEARCH_URL, headers } from "../../contants";
-import { ApiResponseType, formJsonType, tableDataType } from "../../global.type";
+import { ApiResponseType, formJsonKeyType, tableDataType } from "../../global.type";
 function SearchApi(body: any, setPostData: (data: any) => void) {
     axios.post(SEARCH_URL, body, { headers: headers }).then((response) => {
         setPostData(response.data);
@@ -18,7 +18,7 @@ function HomePage() {
     const [tableData, setTableData] = useState<tableDataType>();
     const [postData, setPostData] = useState<ApiResponseType>();
     const [cardType, setCardType] = useState<string>("Kit");
-    const [formJson, setFormJson] = useState<formJsonType>(createAccountformJson);
+    const [formJson, setFormJson] = useState<formJsonKeyType>(createAccountformJson);
 
 
     useEffect(() => {
@@ -36,14 +36,10 @@ function HomePage() {
         }
     }, [cardType, postData, value])
 
-    console.log(tableData)
-
     const onSearchButtonClick = () => {
         const newRequestBody = { ...body, value: value };
         SearchApi(newRequestBody, setPostData);
     }
-
-    console.log(tableData);
 
 
 

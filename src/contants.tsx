@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-import { formJsonType } from "./global.type";
+import { formJsonKeyType } from "./global.type";
 
 export const cards: Array<{title: string; icon: string; active: boolean}> = [
     {
@@ -96,161 +96,206 @@ export const rows = [
     actions: "create Account",
   }
 ]
-export const createAccountformJson: formJsonType = {
-  formTitle: "Card Details",
-  forms:[
-    {
-      type: "form",
-  
-      fields: [
-        {
-          element: "select",
-          label: "Programe type",
-          options: [
-            {
-              key: 1,
-              title: "corporate",
-              value: "corporate"
-            },
-            {
-              key: 2,
-              title: "All",
-              value: "All"
-            }
-          ],
-          width: "100%",
-          id: "programeType"
-        },
-        {
-          element: 'input',
-          id: "programeName",
-          type: "string",
-          label: "Programe Name",
-          width: "100%"
-        },
-        {
-          element: 'input',
-          id: "corporateName",
-          type: "string",
-          label: "Corporate Name",
-          width: "100%"
-        }
+export const createAccountformJson: formJsonKeyType = {
+    "Create Account": {
+        formTitle: "Card Details",
+        forms:[
+          {
+            type: "form",
+            fields: [
+              {
+                element: "select",
+                label: "Programe type",
+                options: [
+                  {
+                    key: 1,
+                    title: "corporate",
+                    value: "corporate"
+                  },
+                  {
+                    key: 2,
+                    title: "All",
+                    value: "All"
+                  }
+                ],
+                width: "100%",
+                id: "programeType"
+              },
+              {
+                element: 'input',
+                id: "programeName",
+                type: "string",
+                label: "Programe Name",
+                width: "100%"
+              },
+              {
+                element: 'input',
+                id: "corporateName",
+                type: "string",
+                label: "Corporate Name",
+                width: "100%"
+              }
+            ]
+          }
+        ]
+      },
+    "View": {
+      formTitle: "View",
+        forms:[
+          {
+            type: "form",
+            fields: [
+              {
+                element: 'input',
+                id: "customerName",
+                type: "string",
+                label: "Customer Name",
+                width: "100%",
+
+              },
+              {
+                element: 'input',
+                id: "cardNo",
+                type: "string",
+                label: "Card Number",
+                width: "100%"
+              },
+              {
+                element: 'input',
+                id: "emailId",
+                type: "string",
+                label: "emailId",
+                width: "100%",
+
+              },
+              {
+                element: 'input',
+                id: "mobileNo",
+                type: "string",
+                label: "Mobile Number",
+                width: "100%"
+              }
+            ]
+          }
       ]
-    }
-  ]
+    }  
 };
 
-export const cardDetailsFormJson = {
-  formTitle: "Card Details",
-  forms:[
-    {
-      type: "form",
-      fields: [
-        {
-          element: 'input',
-          id: "customerId",
-          type: "text",
-          label: "customer Id",
-          width: "100%"
-        },
-        {
-          element: 'input',
-          id: "nameOnCard",
-          type: "text",
-          label: "Name on Card",
-          width: "100%"
-        },
-        {
-          element: 'input',
-          id: "cardNo",
-          type: "text",
-          label: "Card No",
-          width: "100%"
-        },
-        {
-          element: 'input',
-          id: "expiryDate",
-          type: "date",
-          label: "Expiry date",
-          width: "100%"
-        },
-        {
-          element: 'input',
-          id: "activationDate",
-          type: "date",
-          label: "Activation date",
-          width: "100%"
-        }
-      ]
-    }
-  ]
+export const cardDetailsFormJson: formJsonKeyType = {
+  "View": {
+    formTitle: "Card Details",
+    forms:[
+      {
+        type: "form",
+        fields: [
+          {
+            element: 'input',
+            id: "customerId",
+            type: "text",
+            label: "customer Id",
+            width: "100%"
+          },
+          {
+            element: 'input',
+            id: "nameOnCard",
+            type: "text",
+            label: "Name on Card",
+            width: "100%"
+          },
+          {
+            element: 'input',
+            id: "cardNo",
+            type: "text",
+            label: "Card No",
+            width: "100%"
+          },
+          {
+            element: 'input',
+            id: "expiryDate",
+            type: "date",
+            label: "Expiry date",
+            width: "100%"
+          },
+          {
+            element: 'input',
+            id: "activationDate",
+            type: "date",
+            label: "Activation date",
+            width: "100%"
+          }
+        ]
+      }
+    ]
+  }
 };
 
 export const reissueFormJson = {
-  formTitle: "Wallet Details",
-  forms:[
-    {
-      type: "form",
-      fields: [
+  "View": {
+      formTitle: "Wallet Details",
+      forms:[
         {
-          element: 'input',
-          id: "customerId",
-          type: "text",
-          label: "customer Id",
-          width: "100%"
-        },
-        {
-          element: 'input',
-          id: "nameOnCard",
-          type: "text",
-          label: "Name on Card",
-          width: "100%"
-        },
-        {
-          element: 'input',
-          id: "oldCardNo",
-          type: "text",
-          label: "Old Card No",
-          width: "100%"
-        },
-        {
-          element: 'input',
-          id: "kitNumber",
-          type: "date",
-          label: "Kit Number",
-          width: "100%"
-        },
-        {
-          element: 'input',
-          id: "cardNo",
-          type: "date",
-          label: "Card No",
-          width: "100%"
-        },
-        {
-          element: 'input',
-          id: "expiryDate",
-          type: "date",
-          label: "Expiry date",
-          width: "100%"
-        },
-        {
-          element: 'input',
-          id: "activationDate",
-          type: "date",
-          label: "Activation date",
-          width: "100%"
-        },
-        {
-          element: 'input',
-          id: "reason",
-          type: "date",
-          label: "reasonForReIssuance",
-          width: "100%"
+          type: "form",
+          fields: [
+            {
+              element: 'input',
+              id: "customerId",
+              type: "text",
+              label: "customer Id",
+              width: "100%"
+            },
+            {
+              element: 'input',
+              id: "nameOnCard",
+              type: "text",
+              label: "Name on Card",
+              width: "100%"
+            },
+            {
+              element: 'input',
+              id: "oldCardNo",
+              type: "text",
+              label: "Old Card No",
+              width: "100%"
+            },
+            {
+              element: 'input',
+              id: "kitNumber",
+              type: "date",
+              label: "Kit Number",
+              width: "100%"
+            },
+            {
+              element: 'input',
+              id: "cardNo",
+              type: "date",
+              label: "Card No",
+              width: "100%"
+            },
+            {
+              element: 'input',
+              id: "expiryDate",
+              type: "date",
+              label: "Expiry date",
+              width: "100%"
+            },
+            {
+              element: 'input',
+              id: "activationDate",
+              type: "date",
+              label: "Activation date",
+              width: "100%"
+            },
+            {
+              element: 'input',
+              id: "reason",
+              type: "date",
+              label: "reasonForReIssuance",
+              width: "100%"
+            }
+          ]
         }
       ]
     }
-  ]
 };
 
 
