@@ -19,6 +19,7 @@ function CardDetails(props: CardDetailType) {
     const [isModalVisible, setModalVisible] = useState<boolean>(false);
     const [formData, setFormData] = useState<{ [key: string]: string | number }>({});
     const [formkeyJson, setFormKeyJson] = useState<formJsonType>(createAccountformJson.View);
+    hggjhggiu
 
     useEffect(() => {
         if (cardType && selectedActionData) {
